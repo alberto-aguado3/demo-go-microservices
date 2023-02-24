@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  demo-sql:
+    image: mysql:latest
+    restart: always
+    environment:
+        API_SQLDBNAME: 'db_name'
+        API_SQLUSER: 'user'
+        API_SQLPASSWORD: 'password'
+        MYSQL_ROOT_PASSWORD: 'password'
+        API_SQLHOST: '172.22.0.1'
+        API_SQLPORT: '3306'
+        API_SQLTIMEOUT: '5s'
+    ports:
+      - '3306:3306'
+    volumes:
+      - demo-sql-vol:/var/lib/mysql
+
+volumes:
+  demo-sql-vol:
