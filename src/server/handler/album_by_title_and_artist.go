@@ -11,6 +11,7 @@ import (
 // ListAlbums - responds with the list of all albums as JSON.
 func AlbumByTitleAndArtist(s service.AlbumService) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
+		// albums/artist/:artist/title/:title
 		artist := ctx.Param("artist")
 		title := ctx.Param("title")
 
